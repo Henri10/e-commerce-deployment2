@@ -2,44 +2,51 @@
 {% load static %}
 
 {% block filterForm %}
+    <style>
+        .search{
+            width: 400px;
+        }
+        @media only screen and (max-width: 600px) {
+            .search{
+                width: 120px;
+            }
+        }
+    </style>
      <form action="#" class="nav_form">
                 <a href="{% url "search" %}">
                     <div class="search"><input
                         type="text"
                         class="nav_input search"
-                        placeholder="search here...." name="product-name"/></div></a>
+                        placeholder="Kërkoni produkte...." name="product-name"/></div></a>
                     <img src="{% static "images/search.png" %}" alt="" class="nav_search"/>
      </form>
 {% endblock %}
 
-{% block ads %}
-    <header class="header">
-    <div class="container header_container">
-        <div class="header_filter">
-            <a href="#" class="header_filter_link">Woman’s Fashion</a>
-            <a href="#" class="header_filter_link">Men’s Fashion</a>
-            <a href="#" class="header_filter_link">Electronics</a>
-            <a href="#" class="header_filter_link">Home & Lifestyle</a>
-            <a href="#" class="header_filter_link">Medicine</a>
-            <a href="#" class="header_filter_link">Sports & Outdoor</a>
-            <a href="#" class="header_filter_link">Baby’s & Toys</a>
-            <a href="#" class="header_filter_link">Groceries & Pets</a>
-            <a href="#" class="header_filter_link">Health & Beauty</a>
-        </div>
-        <img src="{% static "images/header.png" %}" alt="" class="header_img"/>
-    </div>
-</header>
-{% endblock %}
+{#{% block ads %}#}
+{#    <header class="header">#}
+{#    <div class="container header_container">#}
+{#        <div class="header_filter">#}
+{#            <a href="#" class="header_filter_link">Woman’s Fashion</a>#}
+{#            <a href="#" class="header_filter_link">Men’s Fashion</a>#}
+{#            <a href="#" class="header_filter_link">Electronics</a>#}
+{#            <a href="#" class="header_filter_link">Home & Lifestyle</a>#}
+{#            <a href="#" class="header_filter_link">Medicine</a>#}
+{#            <a href="#" class="header_filter_link">Sports & Outdoor</a>#}
+{#            <a href="#" class="header_filter_link">Baby’s & Toys</a>#}
+{#            <a href="#" class="header_filter_link">Groceries & Pets</a>#}
+{#            <a href="#" class="header_filter_link">Health & Beauty</a>#}
+{#        </div>#}
+{#    </div>#}
+{#</header>#}
+{#{% endblock %}#}
 
 {% block flashSale %}
-    <section class="section">
-    <div class="container">
+    <div class="container" style="margin-top: 40px">
         <div class="section_category">
-            <p class="section_category_p">Today's</p>
+            <p class="section_category_p">Sot</p>
         </div>
         <div class="section_header">
-            <h3 class="section_title">Flash Sale</h3>
-            <p id="demo"></p>
+            <h3 class="section_title">POROSITË E SHPEJTA</h3>
         </div>
         <!-- Swiper -->
         <div class="swiper mySwiper">
@@ -144,14 +151,16 @@
                                         </div>
                                         <p class="card_rating_numbers">({{ product.sales }})</p>
                                     </div>
-                                    <button
+                                    <div align="center">
+                                        <button
                                             class="add_to_cart"
                                             data-id="1"
                                             data-title="HAVIT HV-G92 Gamepad"
                                             data-image="{% static "images/items/item-1.png" %}"
                                             data-price="120">
-                                        Add to Cart
+                                        Bli Tani
                                     </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -162,10 +171,8 @@
         <div class="swiper-pagination"></div>
     </div>
     <div class="container_btn">
-        <a href="#" class="container_btn_a">VIEW ALL PRODUCTS</a>
+        <a href="#" class="container_btn_a">SHIKO TË GJITHA PRODUKTET</a>
     </div>
-    </div>
-</section>
 {% endblock %}
 
 {% block category %}
@@ -175,7 +182,7 @@
             <p class="section_category_p">categories</p>
         </div>
         <div class="section_header">
-            <h3 class="section_title">Browse by Category</h3>
+            <h3 class="section_title">GJEJ PRODUKTIN</h3>
         </div>
         <div class="categories">
             <div class="category">
@@ -217,11 +224,10 @@
     <section class="section">
     <div class="container">
         <div class="section_category">
-            <p class="section_category_p">This Month</p>
+            <p class="section_category_p">Këtë Muaj</p>
         </div>
         <div class="section_header">
-            <h3 class="section_title">Best Selling Products</h3>
-            <p id="demo"></p>
+            <h3 class="section_title">PRODUKTET ME TË SHITURA</h3>
         </div>
         <!-- Swiper -->
         <div class="swiper mySwiper">
@@ -335,7 +341,7 @@
             <div class="swiper-pagination"></div>
         </div>
         <div class="container_btn">
-            <a href="#" class="container_btn_a">VIEW ALL PRODUCTS</a>
+            <a href="{% url "search" %}" class="container_btn_a">SHIKO TË GJITHA PRODUKTET</a>
         </div>
     </div>
 </section>
@@ -363,8 +369,7 @@
             <p class="section_category_p">Our Products</p>
         </div>
         <div class="section_header">
-            <h3 class="section_title">Explore Our Products</h3>
-            <p id="demo"></p>
+            <h3 class="section_title">EKSPLORO PRODUKTET</h3>
         </div>
         <div class="products">
             {% for product in products %}
@@ -470,78 +475,78 @@
             </div>
         </div>
         <div class="container_btn">
-            <a href="#" class="container_btn_a">VIEW ALL PRODUCTS</a>
+            <a href="#" class="container_btn_a">SHIKO TË GJITHA PRODUKTET</a>
         </div>
     </div>
 </section>
 {% endblock %}
 
-{% block newProduct %}
-    <section class="section">
-    <div class="container">
-        <div class="section_category">
-            <p class="section_category_p">Featured</p>
-        </div>
-        <div class="section_header">
-            <h3 class="section_title">New Arrivals</h3>
-        </div>
-        <div class="gallery">
-            <div class="gallery_item gallery_item_1">
-                <img
-                        src="{% static "images/gallery/gallery-1.png" %}"
-                        alt=""
-                        class="gallery_item_img"/>
-                <div class="gallery_item_content">
-                    <div class="gallery_item_title">Playstation 5</div>
-                    <p class="gallery_item_p">
-                        Lorem ipsum dolor sit amet consectetur adipisicing.
-                    </p>
-                    <a href="#" class="gallery_item_link">SHOP NOW</a>
-                </div>
-            </div>
-            <div class="gallery_item gallery_item_2">
-                <img
-                        src="{% static "images/gallery/gallery-2.png" %}"
-                        alt=""
-                        class="gallery_item_img"/>
-                <div class="gallery_item_content">
-                    <div class="gallery_item_title">Playstation 5</div>
-                    <p class="gallery_item_p">
-                        Lorem ipsum dolor sit amet consectetur adipisicing.
-                    </p>
-                    <a href="#" class="gallery_item_link">SHOP NOW</a>
-                </div>
-            </div>
-            <div class="gallery_item gallery_item_3">
-                <img
-                        src="{% static "images/gallery/gallery-3.png" %}"
-                        alt=""
-                        class="gallery_item_img"/>
-                <div class="gallery_item_content">
-                    <div class="gallery_item_title">Playstation 5</div>
-                    <p class="gallery_item_p">
-                        Lorem ipsum dolor sit amet consectetur adipisicing.
-                    </p>
-                    <a href="#" class="gallery_item_link">SHOP NOW</a>
-                </div>
-            </div>
-            <div class="gallery_item gallery_item_4">
-                <img
-                        src=".{% static "images/gallery/gallery-4.png" %}"
-                        alt=""
-                        class="gallery_item_img"/>
-                <div class="gallery_item_content">
-                    <div class="gallery_item_title">Playstation 5</div>
-                    <p class="gallery_item_p">
-                        Lorem ipsum dolor sit amet consectetur adipisicing.
-                    </p>
-                    <a href="#" class="gallery_item_link">SHOP NOW</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-{% endblock %}
+{#{% block newProduct %}#}
+{#    <section class="section">#}
+{#    <div class="container">#}
+{#        <div class="section_category">#}
+{#            <p class="section_category_p">Featured</p>#}
+{#        </div>#}
+{#        <div class="section_header">#}
+{#            <h3 class="section_title">New Arrivals</h3>#}
+{#        </div>#}
+{#        <div class="gallery">#}
+{#            <div class="gallery_item gallery_item_1">#}
+{#                <img#}
+{#                        src="{% static "images/gallery/gallery-1.png" %}"#}
+{#                        alt=""#}
+{#                        class="gallery_item_img"/>#}
+{#                <div class="gallery_item_content">#}
+{#                    <div class="gallery_item_title">Playstation 5</div>#}
+{#                    <p class="gallery_item_p">#}
+{#                        Lorem ipsum dolor sit amet consectetur adipisicing.#}
+{#                    </p>#}
+{#                    <a href="#" class="gallery_item_link">SHOP NOW</a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="gallery_item gallery_item_2">#}
+{#                <img#}
+{#                        src="{% static "images/gallery/gallery-2.png" %}"#}
+{#                        alt=""#}
+{#                        class="gallery_item_img"/>#}
+{#                <div class="gallery_item_content">#}
+{#                    <div class="gallery_item_title">Playstation 5</div>#}
+{#                    <p class="gallery_item_p">#}
+{#                        Lorem ipsum dolor sit amet consectetur adipisicing.#}
+{#                    </p>#}
+{#                    <a href="#" class="gallery_item_link">SHOP NOW</a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="gallery_item gallery_item_3">#}
+{#                <img#}
+{#                        src="{% static "images/gallery/gallery-3.png" %}"#}
+{#                        alt=""#}
+{#                        class="gallery_item_img"/>#}
+{#                <div class="gallery_item_content">#}
+{#                    <div class="gallery_item_title">Playstation 5</div>#}
+{#                    <p class="gallery_item_p">#}
+{#                        Lorem ipsum dolor sit amet consectetur adipisicing.#}
+{#                    </p>#}
+{#                    <a href="#" class="gallery_item_link">SHOP NOW</a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="gallery_item gallery_item_4">#}
+{#                <img#}
+{#                        src=".{% static "images/gallery/gallery-4.png" %}"#}
+{#                        alt=""#}
+{#                        class="gallery_item_img"/>#}
+{#                <div class="gallery_item_content">#}
+{#                    <div class="gallery_item_title">Playstation 5</div>#}
+{#                    <p class="gallery_item_p">#}
+{#                        Lorem ipsum dolor sit amet consectetur adipisicing.#}
+{#                    </p>#}
+{#                    <a href="#" class="gallery_item_link">SHOP NOW</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{#{% endblock %}#}
 
 {% block guarantee %}
     <section class="section">
@@ -564,48 +569,16 @@
 
 {% block footer %}
     <footer class="footer">
-    <div class="container footer_container">
-        <div class="footer_item">
-            <a href="#" class="footer_logo">Exclusive</a>
-            <div class="footer_p">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Exercitationem fuga harum voluptate?
+        <div class="footer_bottom">
+            <div class="container footer_bottom_container">
+                <h3 style="color: white">BLI MIRË</h3>
+                <p class="footer_copy">
+                    &copy;Copyright Bli Mirë <span id="year"></span>. All right reserved.
+                </p>
             </div>
         </div>
-        <div class="footer_item">
-            <h3 class="footer_item_titl">Support</h3>
-            <ul class="footer_list">
-                <li class="li footer_list_item">Stockholm, Sweden</li>
-                <li class="li footer_list_item">email@gmail.com</li>
-                <li class="li footer_list_item">+46 123 456 78</li>
-                <li class="li footer_list_item">+46 72 345 67</li>
-            </ul>
-        </div>
-        <div class="footer_item">
-            <h3 class="footer_item_titl">Support</h3>
-            <ul class="footer_list">
-                <li class="li footer_list_item">Account</li>
-                <li class="li footer_list_item">Login / Register</li>
-                <li class="li footer_list_item">Cart</li>
-                <li class="li footer_list_item">Shop</li>
-            </ul>
-        </div>
-        <div class="footer_item">
-            <h3 class="footer_item_titl">Support</h3>
-            <ul class="footer_list">
-                <li class="li footer_list_item">Privacy policy</li>
-                <li class="li footer_list_item">Terms of use</li>
-                <li class="li footer_list_item">FAQ's</li>
-                <li class="li footer_list_item">Contact</li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer_bottom">
-        <div class="container footer_bottom_container">
-            <p class="footer_copy">
-                Copyright Henri Xhakolli 2023. All right reserved
-            </p>
-        </div>
-    </div>
 </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 {% endblock %}

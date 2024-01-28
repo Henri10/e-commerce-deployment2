@@ -5,6 +5,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="shortcut icon" href="{% static "images/Ecommerce-Logo.png" %}"/>
     <!-- Link Swiper's CSS -->
     <link
             rel="stylesheet"
@@ -305,6 +306,8 @@ ul {
 .trending_p {
   color: var(--color-green);
 }
+
+
 .trending_title {
   color: var(--colo-white-1);
   font-size: 4rem;
@@ -611,9 +614,9 @@ ul {
     <div class="container top_nav_container">
         <div class="top_nav_wrapper">
             <p class="tap_nav_p">
-                Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+                Bli tani me cmime si kurrë me parë!!!
             </p>
-            <a href="#" class="top_nav_link">SHOP NOW</a>
+            <a href="{% url "search" %}" class="top_nav_link">BLI TANI</a>
         </div>
     </div>
 </div>
@@ -632,7 +635,7 @@ ul {
 {#</style>#}
 <nav class="nav">
     <div class="container nav_container">
-        <a href="#" class="nav_logo">EXCLUSIVE</a> {% block filterForm %}{% endblock %}
+        <a href="{% url "index" %}" class="nav_logo">BEST BUY</a> {% block filterForm %}{% endblock %}
         <ul class="nav_list">
             <li class="nav_item"><a href="/" class="nav_link">Home</a></li>
             <li class="nav_item"><a href="#" class="nav_link">About</a></li>

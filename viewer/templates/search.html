@@ -2,11 +2,21 @@
 {% load static %}
 
 {% block filterForm %}
+    <style>
+        .search{
+            width: 400px;
+        }
+        @media only screen and (max-width: 600px) {
+            .search{
+                width: 120px;
+            }
+        }
+    </style>
     <form action="#" class="nav_form">
                 <input
                         type="text"
                         class="nav_input search"
-                        placeholder="search here...." name="product-name"/>
+                        placeholder="Kërkoni produkte...." name="product-name"/>
                 <img src="{% static "images/search.png" %}" onclick="triggerEnterKey()" alt="" class="nav_search"/>
      </form>
 {% endblock %}
