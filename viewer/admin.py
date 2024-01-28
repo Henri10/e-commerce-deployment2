@@ -1,3 +1,5 @@
 from django.contrib import admin
+from viewer.models import Product, ShowSector
 
-# Register your models here.
+admin.site.register(Product)
+admin.site.register(ShowSector)
