@@ -19,6 +19,7 @@ class Product(models.Model):
     ulje_perqindje = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
     sales = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     images = models.ImageField(default="")
+    link = models.URLField(blank=True)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

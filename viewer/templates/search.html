@@ -17,7 +17,7 @@
                         type="text"
                         class="nav_input search"
                         placeholder="Kërkoni produkte...." name="product-name"/>
-                <button class="button" type="submit" style="border: none;"><img src="{% static "images/search.png" %}" alt="" class="nav_search"/></button>
+                <button class="button" type="submit" style="border: none"><img src="{% static "images/search.png" %}" alt="" class="nav_search"/></button>
      </form>
 {% endblock %}
 
@@ -31,7 +31,7 @@
             {% for product in products %}
             <div class="card">
                 <div class="card_top">
-                    <img src="{{ product.images.url }}" alt="" class="card_img"/>
+                    <a href="{{ product.link }}"><img src="{{ product.images.url }}" alt="" class="card_img"/></a>
                     <div class="card_top_icons">
                         <svg
                                 xmlns="http://www.w3.org/2000/svg"
